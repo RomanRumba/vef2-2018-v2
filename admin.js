@@ -11,6 +11,7 @@ const csv = require('express-csv');
 /* ---------------------------Requires END  -------------------------------- */
 /* ------------------------------------------------------------------------- */
 const router = express.Router();
+const connectionString = process.env.DATABASE_URL;
 let orders = [];
 /* Notkun : ensureLoggedIn(req, res, next)
    FYRIR  : err er truthy og inniheldur upplýsingar um villu,
