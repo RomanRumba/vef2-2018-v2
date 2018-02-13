@@ -57,13 +57,13 @@ router.get('/admin/download', (req, res) => {
 });
 
 async function fetchTable() {
-  // const client = new Client({ connectionString });
-  const client = new Client({
+  const client = new Client({ connectionString });
+  /*const client = new Client({
     user: 'postgres',
     host: 'localhost',
     database: 'VefforritunVerkefni2',
-    password: 'junglelove1212',
-  });
+    password: 'dontniggmadata',
+  });*/
   await client.connect();
   const result = await client.query('SELECT * FROM orders');
   await client.end();

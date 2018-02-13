@@ -12,7 +12,7 @@ const express = require('express');
 
 const router = express.Router();
 
-// const connectionString = process.env.DATABASE_URL';
+const connectionString = process.env.DATABASE_URL;
 
 
 /* Fyrir rót ef notandi er skráður inn þá er byrt i footer
@@ -41,13 +41,13 @@ router.get('/thanks', (req, res) => {
 });
 
 async function order(name, email, socials, amount) {
-  // const client = new Client({ connectionString });
-  const client = new Client({
+  const client = new Client({ connectionString });
+  /*const client = new Client({
     user: 'postgres',
     host: 'localhost',
     database: 'VefforritunVerkefni2',
-    password: 'junglelove1212',
-  });
+    password: 'dontniggmadata',
+  });*/
   await client.connect();
   await client.query('INSERT INTO orders (name,email,ssn,amount) VALUES ($1,$2,$3,$4)', [name, email, socials, amount]);
   await client.end();
