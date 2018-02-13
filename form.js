@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
   if (req.isAuthenticated()) {
     const data = `<p>Innskráður notandi  ${req.user.name}</p>
                   <p><a href="/logout">Útskráning</a></p>
-                  <p><a href="/admin">Skoða leyndarmál</a></p>`;
+                  <p><a href="/admin">Stjórnsiða</a></p>`;
     return res.render('form', { data });
   }
   const data = '<p><a href="/login">Innskráning</a></p>';
@@ -96,7 +96,7 @@ router.post('/', async (req, res) => {
     if (req.isAuthenticated()) {
       const data = `<p>Innskráning notandi  ${req.user.name}</p>
                     <p><a href="/logout">Útskráning</a></p>
-                    <p><a href="/admin">Skoða leyndarmál</a></p>`;
+                    <p><a href="/admin">Stjórnsiða</a></p>`;
       return res.render('form', { data, error});
     }
     const data = '<p><a href="/login">Innskráning</a></p>';
