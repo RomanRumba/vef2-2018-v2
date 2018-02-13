@@ -1,0 +1,13 @@
+extends layout
+
+block content
+ div.wrapper
+  div.errorMsg
+  form(method="post" action="/login")
+   div.form_input
+    label(for='username') Notendanafn 
+    input(type='text', name='username')
+   div.form_input
+    label(for='password') Lykilorð     
+    input(type='password', name='password')
+   button.btn(type='submit') Innskrá

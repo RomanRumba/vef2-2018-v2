@@ -1,0 +1,23 @@
+extends layout
+
+block content
+ div.wrapper
+  table
+    thead
+     tr
+      th Id
+      th Dagsetning
+      th Nafn
+      th Kennitala
+      th Netfang
+      th Magn
+     tbody
+      each order in orders
+       tr
+        td=order.id
+        td=order.date
+        td=order.name
+        td=order.ssn
+        td=order.email
+        td=order.amount
+  a(href='/admin/download') Sækja

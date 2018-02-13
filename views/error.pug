@@ -1,0 +1,7 @@
+extends layout
+
+block content
+ p Villa
+ if err && err.message
+   p=err.message
+   pre #{err.stack}

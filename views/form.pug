@@ -1,0 +1,54 @@
+extends layout
+
+block content
+ div.wrapper
+  if error
+   ul
+     for e in error
+      li= e
+  form(method="post" action="/" )
+   div.form_input
+    if error
+     if (error.name == '')
+      label(for='name') Nafn 
+      input(type='text', name='name'  class='error')
+     else
+      label(for='name') Nafn 
+      input(type='text', name='name' value=error.name)
+    else
+     label(for='name') Nafn 
+     input(type='text', name='name' )
+   div.form_input
+    if error
+     if (error.email == '')
+      label(for='email') Netfang    
+      input(type='email', name='email' class='error' )
+     else
+      label(for='email') Netfang    
+      input(type='email', name='email' value=error.email )
+    else 
+     label(for='email') Netfang    
+     input(type='email', name='email' )
+   div.form_input
+    if error
+     if (error.socials == '')
+      label(for='socials') Kennitala 
+      input(type='text', name='socials' class='error')
+     else
+      label(for='socials') Kennitala 
+      input(type='text', name='socials' value=error.socials)
+    else 
+     label(for='socials') Kennitala 
+     input(type='text', name='socials')
+   div.form_input
+    if error
+     if(error.amount == '')
+      label(for='amount') Fjöldi 
+      input(type='text', name='amount' class='error')
+     else 
+      label(for='amount') Fjöldi 
+      input(type='text', name='amount' value=error.amount)
+    else
+     label(for='amount') Fjöldi 
+     input(type='text', name='amount' )
+   button.btn(type='submit') Senda
