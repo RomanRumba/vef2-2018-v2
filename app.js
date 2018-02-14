@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser');
 /* Verðum að nota til að búa til sessions til að halda utan um login passport þarf að hafa þetta */
 const session = require('express-session');
 const passport = require('passport');
-/* notað til að segja hvaða leið á að nota til að auðkenna erum á local vel */
+/* notað til að segja hvaða leið á að nota til að auðkenna erum á local */
 const { Strategy } = require('passport-local');
 
 /* ------------------------------------------------------------------------- */
@@ -104,8 +104,7 @@ app.use((req, res, next) => {
   /* isAuthenticated er fall sem er fengið úr passport skilar true eða false
      if true =  þá er til authenticated notandi og hann er settur sem res.locals.user
      þetta leyfir okkur nuna að nota user i view.
-     if false = kallað i næsta fallið i keðjuni
-  */
+     if false = kallað i næsta fallið i keðjuni */
   if (req.isAuthenticated()) {
     res.locals.user = req.user;
   }
@@ -130,7 +129,7 @@ app.use(admin);
             next er næsti middleware i keðjuni.
    Eftir  : visar þig i error.pug ef siðan sem var leitað var ófundin */
 function notFoundHandler(req, res, next) { // eslint-disable-line
-  res.status(404).render('error', { title: '404' });
+  res.status(404).render('error', { title: '404' , errorMsg: 'Siðan fannst ekki'});
 }
 
 /* NOTKUN : errorHandler(err, req, res, next)
@@ -142,7 +141,7 @@ function notFoundHandler(req, res, next) { // eslint-disable-line
    Eftir  : loggar ut villuna og visar i error.pug með villu prentaða i hausnum */
 function errorHandler(err, req, res, next) { // eslint-disable-line
   console.error(err);
-  res.status(500).render('error', { err });
+  res.status(500).render('error', { err ,errorMsg: 'Villa!'});
 }
 
 /* -------------------------------------------------------------------------- */

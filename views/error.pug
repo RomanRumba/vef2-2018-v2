@@ -3,7 +3,8 @@ extends layout
 block content
  div.wrapper
   div.thanksContent
-   p Villa
+   p=errorMsg
+   a(href='/') Aftur á forsiðuna
    if err && err.message
     p=err.message
     pre #{err.stack}
