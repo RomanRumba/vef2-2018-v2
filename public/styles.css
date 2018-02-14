@@ -48,6 +48,23 @@ li {
   padding-bottom: 0.5em;
 }
 
+table {
+  font-size: 0.5em;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
 .wrapper {
   margin: 0 auto;
   padding-top: 20vh;
@@ -87,21 +104,4 @@ li {
 
 .thanksContent {
   font-size: 0.5em;
-}
-
-table {
-  font-size: 0.5em;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td,
-th {
-  border: 1px solid #ddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #ddd;
 }
