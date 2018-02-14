@@ -105,3 +105,8 @@ tr:nth-child(even) {
 .thanksContent {
   font-size: 0.5em;
 }
+
+.download {
+  font-size: 0.5em;
+  padding-top: 0.5em;
+}
