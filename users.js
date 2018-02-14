@@ -32,7 +32,7 @@ const records = [
 /* Notkun : comparePasswords(hash, user)
    Fyrir  : hash er lykillorðið
             user er object með id,username,password,name
-   Eftir  : skilar notenda ef lýkill orðið hanns passar
+   Eftir  : skilar notenda ef lýkillorðið hanns passar
             við það sem er i user obj annars ósatt */
 exports.comparePasswords = (hash, user) =>
   bcrypt.compare(hash, user.password)
@@ -50,11 +50,9 @@ exports.comparePasswords = (hash, user) =>
             ef það er þá er honum skilað annars skilað null */
 exports.findByUsername = username => new Promise((resolve) => {
   const found = records.find(u => u.username === username);
-
   if (found) {
     return resolve(found);// ef notandi er til þá er resolvað þvi og skilað honum
   }
-
   return resolve(null);// ef hann er ekki til þá skilum null
 });
 
@@ -65,10 +63,8 @@ exports.findByUsername = username => new Promise((resolve) => {
             ef það er þá er honum skilað annars skilað null */
 exports.findById = id => new Promise((resolve) => {
   const found = records.find(u => u.id === id);
-
   if (found) {
     return resolve(found); // ef notandi er til þá er resolvað þvi og skilað honum
   }
-
   return resolve(null); // ef hann er ekki til þá skilum null
 });
