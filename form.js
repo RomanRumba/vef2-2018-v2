@@ -65,7 +65,7 @@ router.get('/thanks', (req, res) => {
    4)validatar gögnin ef það er til villa þá er það bætt i error fylki
    5)ef það eru villur þá er visað þig aftur á / og synt villu skilaboðin
      annars ef það eru engar villur þá er sett gögnin i gagnagrun og visað i /thanks */
-router.post('/', async (req, res) => {
+router.post('/', async (req, res) => { // eslint-disable-line
   // næ i öll gögn úr formi
   const {
     name,
@@ -110,7 +110,7 @@ router.post('/', async (req, res) => {
     error.push('Kennitala verður að vera á formi 000000-0000');
   }
 
-  if (parseInt(camount, 10) <= 0 || camount.length === 0 || isNaN(camount)) {
+  if (parseInt(camount, 10) <= 0 || camount.length === 0 || isNaN(camount)) {// eslint-disable-line
     error.push('Fjöldi verður að vera tala stærri en 0 ');
   }
 
