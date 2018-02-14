@@ -129,7 +129,7 @@ app.use(admin);
             next er næsti middleware i keðjuni.
    Eftir  : visar þig i error.pug ef siðan sem var leitað var ófundin */
 function notFoundHandler(req, res, next) { // eslint-disable-line
-  res.status(404).render('error', { title: '404' , errorMsg: 'Siðan fannst ekki'});
+  res.status(404).render('error', { title: '404', errorMsg: 'Siðan fannst ekki' });
 }
 
 /* NOTKUN : errorHandler(err, req, res, next)
@@ -141,7 +141,7 @@ function notFoundHandler(req, res, next) { // eslint-disable-line
    Eftir  : loggar ut villuna og visar i error.pug með villu prentaða i hausnum */
 function errorHandler(err, req, res, next) { // eslint-disable-line
   console.error(err);
-  res.status(500).render('error', { err ,errorMsg: 'Villa!'});
+  res.status(500).render('error', { err, errorMsg: 'Villa!' });
 }
 
 /* -------------------------------------------------------------------------- */
